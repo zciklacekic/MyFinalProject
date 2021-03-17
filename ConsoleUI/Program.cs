@@ -12,9 +12,24 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            ProductTest();
+            //ProductTest();
             //CategoryTest();
             //Data Transformation Objects
+
+            Console.WriteLine(Base64Encode("admciklacekicz@trdomain.net:Deneme99"));
+            Console.WriteLine(Base64Decode("YWRtY2lrbGFjZWtpY3pAdHJkb21haW4ubmV0OkRlbmVtZTk5"));
+
+
+        }
+        public static string Base64Encode(string plainText) //Encode
+        {
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+            return System.Convert.ToBase64String(plainTextBytes);
+        }
+        public static string Base64Decode(string base64EncodedData) //Decode
+        {
+            var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+            return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
         }
 
         private static void CategoryTest()
